@@ -1,12 +1,13 @@
 """In this file we initialize the layer class"""
 import numpy as np
 import perceptron
+from random import random
 
 
 
 class Layer:
     """Represents a layer of perceptrons"""
-    def __init__(self, N, activation_function, n_before=1, n_after=1):
+    def __init__(self, N, activation_function, n_before=1):
         """Attributes:
             Neurons: A numpy array containing all the perceptrons of the given layer
         In:
@@ -18,5 +19,5 @@ class Layer:
         Neurons = []
         # randomly initialize each of the n perceptrons
         for _ in range(N):
-            Neurons.append(perceptron.Perceptron(np.random.rand(n_before),activation_function,np.random.rand(n_after)))
+            Neurons.append(perceptron.Perceptron(np.random.rand(n_before),activation_function, random()))
         self.Neurons = np.array(Neurons)
