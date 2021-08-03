@@ -19,5 +19,5 @@ class Layer:
         Neurons = []
         # randomly initialize each of the n perceptrons
         for _ in range(N):
-            Neurons.append(perceptron.Perceptron(np.random.rand(n_before),activation_function, random()))
+            Neurons.append(perceptron.Perceptron(np.random.rand(n_before),random(),activation_function))
         self.Neurons = np.array(Neurons)
